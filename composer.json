@@ -1,8 +1,8 @@
 {
-    "name": "userfrosting/theme-uikit",
+    "name": "userfrosting/demo-vue",
     "type": "project",
-    "description": "UiKit based theme for UserFrosting, using Vue.js",
-    "keywords": ["Vue.js", "UiKit", "UserFrosting"],
+    "description": "Demo of a Vue.js single page app working on UserFrosting 5 and UiKit",
+    "keywords": ["UserFrosting", "UserFrosting 5", "UserFrosting Sprinkle", "UserFrosting Theme", "Vue.js", "UiKit"],
     "homepage": "https://github.com/userfrosting/theme-uikit",
     "license" : "MIT",
     "authors" : [
@@ -20,25 +20,18 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpstan/phpstan": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-mockery": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "phpstan/phpstan-strict-rules": "^1.0",
-        "phpunit/phpunit": "^9.5",
-        "mockery/mockery": "^1.2",
-        "league/factory-muffin": "^3.0",
-        "league/factory-muffin-faker": "^2.0"
+        "phpunit/phpunit": "^9.5"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "UserFrosting\\Theme\\UiKit\\": "app/src"
+            "UserFrosting\\Demo\\": "app/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "UserFrosting\\Theme\\UiKit\\App\\": "app/tests/"
+            "UserFrosting\\Tests\\Demo\\": "app/tests/"
         }
     }
 }

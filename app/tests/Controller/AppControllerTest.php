@@ -8,7 +8,7 @@
  * @license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)
  */
 
-namespace UserFrosting\Tests\App\Controller;
+namespace UserFrosting\Tests\Demo\Controller;
 
 use UserFrosting\App\MyApp;
 use UserFrosting\Testing\TestCase;

@@ -8,7 +8,7 @@
  * @license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)
  */
 
-namespace UserFrosting\Theme\UiKit;
+namespace UserFrosting\Demo;
 
 use UserFrosting\Sprinkle\Core\Core;
 use UserFrosting\Sprinkle\SprinkleRecipe;

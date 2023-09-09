@@ -21,7 +21,7 @@ if (PHP_SAPI == 'cli-server') {
     $_SERVER['SCRIPT_NAME'] = '/index.php';
 }
 
-use UserFrosting\Theme\UiKit\UiKitTheme;
+use UserFrosting\Demo\UiKitTheme;
 use UserFrosting\UserFrosting;
 
 $uf = new UserFrosting(UiKitTheme::class);

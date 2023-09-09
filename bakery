@@ -27,7 +27,7 @@ if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
 }
 
 use UserFrosting\Bakery\Bakery;
-use UserFrosting\Theme\UiKit\UiKitTheme;
+use UserFrosting\Demo\UiKitTheme;
 
 /**
  * Get and run CLI App

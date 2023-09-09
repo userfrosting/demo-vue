@@ -8,11 +8,11 @@
  * @license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)
  */
 
-namespace UserFrosting\Theme\UiKit;
+namespace UserFrosting\Demo;
 
 use Slim\App;
 use UserFrosting\Routes\RouteDefinitionInterface;
-use UserFrosting\Theme\UiKit\Controller\AppController;
+use UserFrosting\Demo\Controller\AppController;
 
 class Routes implements RouteDefinitionInterface
 {

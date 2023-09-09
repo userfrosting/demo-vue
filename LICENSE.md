@@ -1,4 +1,4 @@
-Copyright (c) 2019 by Alexander Weissman (https://alexanderweissman.com)
+Copyright (c) 2023 by Louis Charette (https://bbqsoftwares.com)
 
 UserFrosting is 100% free and open-source.
 
