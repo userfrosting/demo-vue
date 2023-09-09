@@ -18,6 +18,7 @@ class Routes implements RouteDefinitionInterface
 {
     public function register(App $app): void
     {
-        $app->get('/', [AppController::class, 'pageIndex'])->setName('index');
+        // Use a catch-all route to allow the user to refresh the page when using vue-router createWebHistory API
+        $app->get('/[{path:.*}]', [AppController::class, 'pageIndex'])->setName('index');
     }
 }
