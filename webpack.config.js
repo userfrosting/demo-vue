@@ -19,7 +19,24 @@ Encore
         runtimeCompilerBuild: false
     })
     .enableSassLoader()
+    .enableLessLoader()
     .enableBuildNotifications()
+    // .configureDevServerOptions(options => {
+    //     options.port = 8080;
+    //     options.liveReload = true;
+    //     options.static = {
+    //         watch: false
+    //     };
+    //     options.watchFiles = {
+    //         paths: ['app/src/**/*.php', 'templates/**/*'],
+    //     };
+    //     options.proxy = {
+    //         '!/public/assets/**': {
+    //             target: 'http://localhost:8888',
+    //             changeOrigin: true,
+    //         }
+    //     };
+    // })
 ;
 
 module.exports = Encore.getWebpackConfig();
