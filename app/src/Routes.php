@@ -11,14 +11,15 @@
 namespace UserFrosting\Demo;
 
 use Slim\App;
-use UserFrosting\Routes\RouteDefinitionInterface;
 use UserFrosting\Demo\Controller\AppController;
+use UserFrosting\Routes\RouteDefinitionInterface;
 
 class Routes implements RouteDefinitionInterface
 {
     public function register(App $app): void
     {
         // Use a catch-all route to allow the user to refresh the page when using vue-router createWebHistory API
+        $app->get('/api', [AppController::class, 'api'])->setName('api');
         $app->get('/[{path:.*}]', [AppController::class, 'pageIndex'])->setName('index');
     }
 }

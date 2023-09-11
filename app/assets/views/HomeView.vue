@@ -2,30 +2,23 @@
 export default {
     data() {
         return {
-            resources: [
-                {
-                    url: 'https://getbootstrap.com/docs/5.3/getting-started/introduction/',
-                    title: 'Bootstrap quick start guide'
-                },
-                {
-                    url: 'https://getbootstrap.com/docs/5.3/getting-started/webpack/',
-                    title: 'Bootstrap Webpack guide'
-                },
-                {
-                    url: 'https://getbootstrap.com/docs/5.3/getting-started/parcel/',
-                    title: 'Bootstrap Parcel guide'
-                },
-                {
-                    url: 'https://getbootstrap.com/docs/5.3/getting-started/vite/',
-                    title: 'Bootstrap Vite guide'
-                },
-                {
-                    url: 'https://getbootstrap.com/docs/5.3/getting-started/contribute/',
-                    title: 'Contributing to Bootstrap'
-                },
-            ]
+            resources: [],
+            loading: false,
+        };
+    },
+    methods: {
+        getList() {
+            this.loading = true
+            this.axios.get('/api').then((response) => {
+                // console.log(response.data)
+                this.resources = response.data
+                this.loading = false
+            })
         }
-    }
+    },
+    created() {
+        this.getList()
+    },
 }
 </script>
 
@@ -55,9 +48,10 @@ export default {
         <h1 class="uk-heading-divider">Additional resources</h1>
         <ul class="uk-list">
             <li v-for="item in resources">
-                <a class="uk-button uk-button-default" :href="item.url">{{ item.title }}</a>
+                <a class="uk-button uk-button-default" :href="item.url">#{{ item.number }} - {{ item.title }}</a>
             </li>
         </ul>
+        <button class="uk-button uk-button-primary" @click="getList()" :disabled='loading'>Reload Resources</button>
 
         <div style="padding-top: 25px; padding-bottom: 25px;"></div>
 
