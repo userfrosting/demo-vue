@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios'
+
 export default {
     data() {
         return {
@@ -9,8 +11,7 @@ export default {
     methods: {
         getList() {
             this.loading = true
-            this.axios.get('/api').then((response) => {
-                // console.log(response.data)
+            axios.get('/api').then((response) => {
                 this.resources = response.data
                 this.loading = false
             })
