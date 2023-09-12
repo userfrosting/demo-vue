@@ -1,26 +1,22 @@
-<script>
+<script setup>
 import axios from 'axios'
+import { ref } from 'vue'
 
-export default {
-    data() {
-        return {
-            resources: [],
-            loading: false,
-        };
-    },
-    methods: {
-        getList() {
-            this.loading = true
-            axios.get('/api').then((response) => {
-                this.resources = response.data
-                this.loading = false
-            })
-        }
-    },
-    created() {
-        this.getList()
-    },
+// Variables
+const resources = ref([])
+const loading = ref(false)
+
+// Methods 
+function getList() {
+    loading.value = true
+    axios.get('/api').then((response) => {
+        resources.value = response.data
+        loading.value = false
+    })
 }
+
+// Initial load
+getList()
 </script>
 
 <template>
