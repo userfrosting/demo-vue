@@ -1,22 +1,5 @@
 <script setup>
-import axios from 'axios'
-import { ref } from 'vue'
-
-// Variables
-const resources = ref([])
-const loading = ref(false)
-
-// Methods 
-function getList() {
-    loading.value = true
-    axios.get('/api').then((response) => {
-        resources.value = response.data
-        loading.value = false
-    })
-}
-
-// Initial load
-getList()
+import Resources from '@/components/Resources.vue'
 </script>
 
 <template>
@@ -44,12 +27,7 @@ getList()
         <div style="padding-top: 25px; padding-bottom: 25px;"></div>
 
         <h1 class="uk-heading-divider">Additional resources</h1>
-        <ul class="uk-list">
-            <li v-for="item in resources">
-                <a class="uk-button uk-button-default" :href="item.url">#{{ item.number }} - {{ item.title }}</a>
-            </li>
-        </ul>
-        <button class="uk-button uk-button-primary" @click="getList()" :disabled='loading'>Reload Resources</button>
+        <Resources />
 
         <div style="padding-top: 25px; padding-bottom: 25px;"></div>
 

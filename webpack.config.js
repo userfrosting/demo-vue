@@ -1,5 +1,6 @@
 const Encore = require('@symfony/webpack-encore');
 const webpack = require('webpack');
+const path = require('path');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -44,4 +45,12 @@ Encore
     // })
 ;
 
-module.exports = Encore.getWebpackConfig();
+// export the final configuration
+let config = Encore.getWebpackConfig();
+config.resolve.alias = {
+    '@': [
+        path.resolve(__dirname, './sprinkle/assets'),
+        path.resolve(__dirname, './app/assets'),
+    ]
+};
+module.exports = config;
