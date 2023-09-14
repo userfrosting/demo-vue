@@ -27,6 +27,12 @@ Encore
         __VUE_OPTIONS_API__: true,
         __VUE_PROD_DEVTOOLS__: false,
     }))
+    .addAliases({
+        '@': [
+            path.resolve(__dirname, './sprinkle/assets'),
+            path.resolve(__dirname, './app/assets'),
+        ]
+    })
     // .configureDevServerOptions(options => {
     //     options.port = 8080;
     //     options.liveReload = true;
@@ -45,12 +51,4 @@ Encore
     // })
 ;
 
-// export the final configuration
-let config = Encore.getWebpackConfig();
-config.resolve.alias = {
-    '@': [
-        path.resolve(__dirname, './sprinkle/assets'),
-        path.resolve(__dirname, './app/assets'),
-    ]
-};
-module.exports = config;
+module.exports = Encore.getWebpackConfig();
