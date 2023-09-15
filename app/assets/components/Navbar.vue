@@ -24,6 +24,9 @@ defineProps({
                             <li>
                                 <RouterLink to="/about">About</RouterLink>
                             </li>
+                            <li>
+                                <RouterLink to="/resources">Api Test</RouterLink>
+                            </li>
                         </ul>
                     </div>
                 </nav>

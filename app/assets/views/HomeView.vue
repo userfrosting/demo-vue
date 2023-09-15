@@ -1,7 +1,3 @@
-<script setup>
-import Resources from '@/components/Resources.vue'
-</script>
-
 <template>
     <div class="uk-container">
         <div style="padding-top: 50px;"></div>
@@ -23,11 +19,6 @@ import Resources from '@/components/Resources.vue'
                 </div>
             </div>
         </article>
-
-        <div style="padding-top: 25px; padding-bottom: 25px;"></div>
-
-        <h1 class="uk-heading-divider">Additional resources</h1>
-        <Resources />
 
         <div style="padding-top: 25px; padding-bottom: 25px;"></div>
 
