@@ -8,11 +8,11 @@ UIkit.use(Icons);
 
 <template>
     <header>
-        <Navbar title="Website Title" />
+        <Navbar title="Userfrosting" />
     </header>
     <RouterView />
 </template>
 
 <style lang="less">
-@import "uikit/src/less/uikit.theme.less";
+@import "less/uf-theme.less";
 </style>
