@@ -33,7 +33,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.php_versions }}
+          node-version: ${{ matrix.node_version }}
       
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress
