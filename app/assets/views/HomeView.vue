@@ -1,6 +1,5 @@
 <template>
     <div class="uk-container">
-        <div style="padding-top: 50px;"></div>
         <article class="uk-article">
             <h1 class="uk-article-title"><a class="uk-link-reset" href="#">Hello!</a></h1>
             <p class="uk-article-meta">Written by <a href="#">Aravind Voggu</a> on 29 September 2018.</p>

@@ -12,6 +12,7 @@ namespace UserFrosting\Demo\Controller;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Views\Twig;
+use UserFrosting\Sprinkle\Account\Authenticate\Authenticator;
 
 class AppController
 {
@@ -27,6 +28,13 @@ class AppController
         return $view->render($response, 'pages/index.html.twig');
     }
 
+    /**
+     * Return static demo API.
+     *
+     * @param Response $response
+     *
+     * @return Response
+     */
     public function api(Response $response): Response
     {
         $data = [
@@ -57,8 +65,28 @@ class AppController
             ],
         ];
 
-        // Write empty response
+        // Write json response
         $payload = json_encode($data, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT);
+        $response->getBody()->write($payload);
+
+        return $response->withHeader('Content-Type', 'application/json');
+    }
+
+    /**
+     * Return true if user is logged in, false otherwise.
+     *
+     * @param  Response      $response
+     * @param  Authenticator $authenticator
+     * @return Response
+     */
+    public function authCheck(Response $response, Authenticator $authenticator): Response
+    {
+        $auth = $authenticator->check();
+        $data = [
+            'auth' => $auth,
+            'user' => $auth ? $authenticator->user() : null,
+        ];
+        $payload = json_encode($data, JSON_THROW_ON_ERROR);
         $response->getBody()->write($payload);
 
         return $response->withHeader('Content-Type', 'application/json');

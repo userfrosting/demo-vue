@@ -1,10 +1,10 @@
 <?php
 
-$header = 'UserFrosting (http://www.userfrosting.com)
+$header = 'UserFrosting Vue Demo (http://www.userfrosting.com)
 
-@link      https://github.com/userfrosting/UserFrosting
-@copyright Copyright (c) 2021 Alexander Weissman & Louis Charette
-@license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)';
+@link      https://github.com/userfrosting/demo-vue
+@copyright Copyright (c) 2023 Louis Charette
+@license   https://github.com/userfrosting/demo-vue/blob/main/LICENSE.md (MIT License)';
 
 $rules = [
     '@PSR2'                                       => true,

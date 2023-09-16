@@ -38,6 +38,7 @@ class Demo implements SprinkleRecipe
     {
         return [
             Core::class,
+            CustomAccount::class,
         ];
     }
 

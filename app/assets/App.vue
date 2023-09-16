@@ -10,7 +10,9 @@ UIkit.use(Icons);
     <header>
         <Navbar title="Userfrosting" />
     </header>
-    <RouterView />
+    <div class="uk-section uk-section-default">
+        <RouterView />
+    </div>
 </template>
 
 <style lang="less">

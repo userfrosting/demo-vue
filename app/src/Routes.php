@@ -13,6 +13,8 @@ namespace UserFrosting\Demo;
 use Slim\App;
 use UserFrosting\Demo\Controller\AppController;
 use UserFrosting\Routes\RouteDefinitionInterface;
+use UserFrosting\Sprinkle\Account\Controller\LoginAction;
+use UserFrosting\Sprinkle\Account\Controller\LogoutAction;
 
 class Routes implements RouteDefinitionInterface
 {
@@ -20,6 +22,9 @@ class Routes implements RouteDefinitionInterface
     {
         // Use a catch-all route to allow the user to refresh the page when using vue-router createWebHistory API
         $app->get('/api', [AppController::class, 'api'])->setName('api');
+        $app->get('/auth/check', [AppController::class, 'authCheck'])->setName('authCheck');
+        $app->post('/auth/login', LoginAction::class)->setName('account.login');
+        $app->get('/auth/logout', LogoutAction::class)->setName('account.logout'); //->add(AuthGuard::class);
         $app->get('/[{path:.*}]', [AppController::class, 'pageIndex'])->setName('index');
     }
 }
