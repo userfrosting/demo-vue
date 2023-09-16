@@ -1,11 +1,11 @@
 <?php
 
 /*
- * UserFrosting (http://www.userfrosting.com)
+ * UserFrosting Vue Demo (http://www.userfrosting.com)
  *
- * @link      https://github.com/userfrosting/UserFrosting
- * @copyright Copyright (c) 2021 Alexander Weissman & Louis Charette
- * @license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)
+ * @link      https://github.com/userfrosting/demo-vue
+ * @copyright Copyright (c) 2023 Louis Charette
+ * @license   https://github.com/userfrosting/demo-vue/blob/main/LICENSE.md (MIT License)
  */
 
 /**
@@ -21,8 +21,8 @@ if (PHP_SAPI == 'cli-server') {
     $_SERVER['SCRIPT_NAME'] = '/index.php';
 }
 
-use UserFrosting\Demo\UiKitTheme;
+use UserFrosting\Demo\Demo;
 use UserFrosting\UserFrosting;
 
-$uf = new UserFrosting(UiKitTheme::class);
+$uf = new UserFrosting(Demo::class);
 $uf->run();

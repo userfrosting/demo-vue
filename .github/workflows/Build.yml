@@ -1,67 +1,60 @@
-# name: Build
+name: Build
 
-# on:
-#   push:
-#     branches: ['*']
-#   pull_request:
-#     branches: ['*']
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['*']
 #   schedule:
 #   - cron: "0 0 * * 5"
 
-# jobs:
-#   PHPUnit-Memory:
+jobs:
+  PHPUnit-Memory:
 
-#     strategy:
-#       fail-fast: false
-#       matrix:
-#         php_versions: ['8.0', '8.1', '8.2']
+    strategy:
+      fail-fast: false
+      matrix:
+        php_versions: ['8.0', '8.1', '8.2']
+        node_version: ['18']
 
-#     runs-on: ubuntu-latest
-#     name: PHPUnit - PHP ${{ matrix.php_versions }} - Memory SQLite
+    runs-on: ubuntu-latest
+    name: PHP ${{ matrix.php_versions }} - Node ${{ matrix.node_version }} - Memory SQLite
 
-#     steps:
-#       - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v4
       
-#       - name: Setup PHP, with composer and extensions
-#         uses: shivammathur/setup-php@v2
-#         with:
-#           php-version: ${{ matrix.php_versions }}
-#           extensions: mbstring, dom, fileinfo, gd, memcached, redis, pdo_sqlite
-#           coverage: xdebug
-#           tools: pecl, composer
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php_versions }}
+          extensions: mbstring, dom, fileinfo, gd, memcached, redis, pdo_sqlite
+          coverage: xdebug
+          tools: pecl, composer
 
-#       - uses: actions/setup-node@v2
-#         with:
-#           node-version: 14
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.php_versions }}
       
-#       - name: Setup Redis-server
-#         uses: supercharge/redis-github-action@1.1.0
-#         with:
-#           redis-version: 6
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress
       
-#       - name: Setup Memcached
-#         uses: niden/actions-memcached@v7
-            
-#       - name: Install Dependencies
-#         run: composer install --prefer-dist --no-progress
+      - name: Npm Install
+        run: npm install
       
-#       - name: Npm Install
-#         run: npm install
-      
-#       - name: Run Webpack
-#         run: npm run dev
+      - name: Run Webpack
+        run: npm run dev
 
-#       - name: Execute tests
-#         run: | 
-#           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
-#           vendor/bin/phpunit
+      - name: Execute tests
+        run: | 
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+          vendor/bin/phpunit
       
-#       - name: Upload coverage to Codecov
-#         if: github.event_name != 'schedule'
-#         uses: codecov/codecov-action@v3
-#         with:
-#           file: ./_meta/coverage.xml
-#           fail_ci_if_error: true
+      - name: Upload coverage to Codecov
+        if: github.event_name != 'schedule'
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./_meta/coverage.xml
+          fail_ci_if_error: true
 
 #   PHPUnit-MySQL:
 

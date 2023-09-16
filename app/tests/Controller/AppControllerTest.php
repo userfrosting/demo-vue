@@ -10,17 +10,15 @@
 
 namespace UserFrosting\Tests\Demo\Controller;
 
-use UserFrosting\App\MyApp;
+use UserFrosting\Demo\Demo;
 use UserFrosting\Testing\TestCase;
 
 /**
  * Tests for AppController Class.
- *
- * N.B.: THIS FILE IS SAFE TO EDIT OR DELETE.
  */
 class AppControllerTest extends TestCase
 {
-    protected string $mainSprinkle = MyApp::class;
+    protected string $mainSprinkle = Demo::class;
 
     /**
      * Test index (`/`) page.
@@ -34,5 +32,19 @@ class AppControllerTest extends TestCase
         // Asserts
         $this->assertResponseStatus(200, $response);
         $this->assertNotSame('', (string) $response->getBody());
+    }
+
+    /**
+     * Test api (`/api`) page.
+     */
+    public function testApiIndex(): void
+    {
+        // Create request with method and url and fetch response
+        $request = $this->createRequest('GET', '/api');
+        $response = $this->handleRequest($request);
+
+        // Asserts
+        $this->assertResponseStatus(200, $response);
+        $this->assertJson((string) $response->getBody());
     }
 }
