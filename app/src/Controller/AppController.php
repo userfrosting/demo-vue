@@ -75,8 +75,9 @@ class AppController
     /**
      * Return true if user is logged in, false otherwise.
      *
-     * @param  Response      $response
-     * @param  Authenticator $authenticator
+     * @param Response      $response
+     * @param Authenticator $authenticator
+     *
      * @return Response
      */
     public function authCheck(Response $response, Authenticator $authenticator): Response
