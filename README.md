@@ -20,17 +20,46 @@ This is demo of a [Vue.js](https://vuejs.org) single page app working on [UserFr
 
 Copyright (c) 2023, free to use in personal and commercial software as per the [license](LICENSE.md).
 
-
-
 ## Documentation
 
-Coming eventually !
+### Installation
+
+1. Clone repo
+```
+git clone https://github.com/userfrosting/demo-vue.git
+```
+
+2. Composer Install
+```
+composer install
+```
+
+3. Bake _(Tip: Use Sqlite file database for rapid local install)_
+```
+php bakery bake
+```
+
+4. Serve locally
+```
+php -S localhost:8888 -t public 
+```
+
+Assets can be build using Bakery or Npm directly:
+```
+php bakery webpack
+
+// or
+
+npm run dev
+```
+
+_More coming soon !_
 
 <!-- ### [Learning UserFrosting](https://learn.userfrosting.com) -->
 
 <!-- ### [API documentation](http://api.userfrosting.com) -->
 
-### [Change log](CHANGELOG.md)
+## [Change log](CHANGELOG.md)
 
 <!--## Running tests
 
