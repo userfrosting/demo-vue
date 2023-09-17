@@ -19,8 +19,9 @@ export const useAuthStore = defineStore("auth", {
             this.error = null;
             axios
                 .post("/auth/login", form)
-                .then(() => {
-                    this.check();
+                .then((response) => {
+                    this.user = response.data;
+                    this.check(); // Check to make sure it worked
                 })
                 .catch((error) => {
                     this.error = error.response.data;
@@ -35,7 +36,7 @@ export const useAuthStore = defineStore("auth", {
                 .get("/auth/logout")
                 .then(() => {
                     this.user = null;
-                    this.check();
+                    this.check(); // Check to make sure it worked
                 })
                 .finally(() => {
                     this.loading = false;

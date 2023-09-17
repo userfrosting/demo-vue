@@ -12,8 +12,9 @@ namespace UserFrosting\Demo;
 
 use Slim\App;
 use UserFrosting\Demo\Controller\AppController;
+use UserFrosting\Demo\Controller\LoginAction;
 use UserFrosting\Routes\RouteDefinitionInterface;
-use UserFrosting\Sprinkle\Account\Controller\LoginAction;
+
 use UserFrosting\Sprinkle\Account\Controller\LogoutAction;
 
 class Routes implements RouteDefinitionInterface
