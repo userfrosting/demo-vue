@@ -2,7 +2,8 @@
 import AuthCheck from '../components/Auth/Check.vue'
 import Login from '../components/Auth/Login.vue'
 import Logout from '../components/Auth/Logout.vue'
-import { auth } from '../stores/auth.js'
+import { useAuthStore } from '../stores/auth.js'
+const auth = useAuthStore()
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 <script setup>
-import { auth } from '../../stores/auth.js'
+import { useAuthStore } from '../../stores/auth.js'
+const auth = useAuthStore()
 </script>
 
 <template>

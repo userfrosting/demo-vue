@@ -1,6 +1,8 @@
 <script setup>
-import { auth } from '../../stores/auth.js'
+import { useAuthStore } from '../../stores/auth.js'
 import Alert from '../Alert.vue'
+
+const auth = useAuthStore()
 
 // Variables
 let form = {
