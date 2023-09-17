@@ -1,6 +1,7 @@
 <script setup>
 import axios from 'axios'
 import { ref } from 'vue'
+import Alert from '../components/Alert.vue'
 
 // Variables
 const user = ref(null)
@@ -66,11 +67,7 @@ checkAuth()
             <div v-else="auth">
                 <h2>Login</h2>
                 <form class="uk-form-horizontal">
-                    <div class="uk-alert-danger" uk-alert v-if="alert !== null">
-                        <a class="uk-alert-close" uk-close></a>
-                        <h3>{{ alert.title }}</h3>
-                        <p v-html="alert.description"></p>
-                    </div>
+                    <Alert :alert="alert" />
                     <div class="uk-margin">
                         <label class="uk-form-label" for="form-horizontal-username">Username</label>
                         <div class="uk-form-controls">
