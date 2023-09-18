@@ -7,12 +7,13 @@ auth.check()
 <template>
     <h2>Auth Check</h2>
     <div class="uk-container uk-text-center">
-        <p>
-            <span v-if="auth.auth" uk-icon="icon: check; ratio: 4"></span>
-            <span v-else='auth.auth' uk-icon="icon: close; ratio: 4"></span>
+        <p style="font-size: 100px;">
+            <font-awesome-icon class="uk-text-success" v-if="auth.auth" :icon="['fas', 'circle-check']" />
+            <font-awesome-icon class="uk-text-danger" v-else="auth.auth" :icon="['fas', 'circle-xmark']" />
         </p>
         <p v-if="auth.auth">
-            <strong>Username:</strong> {{ auth.user.user_name }}
+            <img :src="auth.user.avatar" class="uk-margin-right" width="50" height="50">
+            <span class="uk-text-middle"><strong>Username:</strong> {{ auth.user.user_name }}</span>
         </p>
         <p>
             <button class="uk-button uk-button-primary" @click="auth.check()" :disabled='auth.loading'>

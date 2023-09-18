@@ -24,7 +24,7 @@ class Routes implements RouteDefinitionInterface
         $app->get('/api', [AppController::class, 'api'])->setName('api');
         $app->get('/auth/check', [AppController::class, 'authCheck'])->setName('authCheck');
         $app->post('/auth/login', LoginAction::class)->setName('account.login');
-        $app->get('/auth/logout', LogoutAction::class)->setName('account.logout'); //->add(AuthGuard::class);
+        $app->get('/auth/logout', LogoutAction::class)->setName('account.logout');
         $app->get('/[{path:.*}]', [AppController::class, 'pageIndex'])->setName('index');
     }
 }
