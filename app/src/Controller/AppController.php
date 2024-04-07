@@ -39,28 +39,28 @@ class AppController
     {
         $data = [
             [
-                'url'    => 'https://getbootstrap.com/docs/5.3/getting-started/introduction/',
-                'title'  => 'Bootstrap quick start guide',
+                'url'    => 'http://vuejs.org/guide/',
+                'title'  => 'VueJS Official Guide',
                 'number' => rand(1, 100),
             ],
             [
-                'url'    => 'https://getbootstrap.com/docs/5.3/getting-started/webpack/',
-                'title'  => 'Bootstrap Webpack guide',
+                'url'    => 'https://getuikit.com/docs/introduction',
+                'title'  => 'UIkit Documentation',
                 'number' => rand(1, 100),
             ],
             [
-                'url'    => 'https://getbootstrap.com/docs/5.3/getting-started/parcel/',
-                'title'  => 'Bootstrap Parcel guide',
+                'url'    => 'https://router.vuejs.org',
+                'title'  => 'Vue Router',
                 'number' => rand(1, 100),
             ],
             [
-                'url'    => 'https://getbootstrap.com/docs/5.3/getting-started/vite/',
-                'title'  => 'Bootstrap Vite guide',
+                'url'    => 'https://axios-http.com/docs/intro',
+                'title'  => 'Axios Documentation',
                 'number' => rand(1, 100),
             ],
             [
-                'url'    => 'https://getbootstrap.com/docs/5.3/getting-started/contribute/',
-                'title'  => 'Contributing to Bootstrap',
+                'url'    => 'https://pinia.vuejs.org',
+                'title'  => 'Pinia',
                 'number' => rand(1, 100),
             ],
         ];
