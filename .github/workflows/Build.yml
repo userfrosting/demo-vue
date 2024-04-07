@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php_versions: ['8.0', '8.1', '8.2']
+        php_versions: ['8.1', '8.2', '8.3']
         node_version: ['18']
 
     runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
 #     strategy:
 #       fail-fast: false
 #       matrix:
-#         php_versions: ['8.0', '8.1', '8.2']
+#         php_versions: ['8.1', '8.2', '8.3']
 
 #     runs-on: ubuntu-latest
 #     name: PHPUnit - PHP ${{ matrix.php_versions }} - MySQL
@@ -139,7 +139,7 @@ jobs:
 #       strategy:
 #         fail-fast: false
 #         matrix:
-#           php_versions: ['8.0', '8.1', '8.2']
+#           php_versions: ['8.1', '8.2', '8.3']
 
 #       runs-on: ubuntu-latest
 #       name: PHPUnit - PHP ${{ matrix.php_versions }} - SQLite
@@ -200,7 +200,7 @@ jobs:
 #       strategy:
 #         fail-fast: false
 #         matrix:
-#           php_versions: ['8.0', '8.1', '8.2']
+#           php_versions: ['8.1', '8.2', '8.3']
 
 #       runs-on: ubuntu-latest
 #       name: PHPUnit - PHP ${{ matrix.php_versions }} - PostgreSQL
@@ -267,7 +267,7 @@ jobs:
 #     strategy:
 #       fail-fast: false
 #       matrix:
-#           php_versions: ['8.0', '8.1', '8.2']
+#           php_versions: ['8.1', '8.2', '8.3']
 
 #     runs-on: windows-latest
 #     name: PHPUnit - PHP ${{ matrix.php_versions }} - Windows
