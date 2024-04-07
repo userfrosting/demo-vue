@@ -1,6 +1,5 @@
-const Encore = require('@symfony/webpack-encore');
-const webpack = require('webpack');
-const path = require('path');
+import Encore from '@symfony/webpack-encore'
+import webpack from 'webpack'
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -15,6 +14,7 @@ Encore
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
+    .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
     .enableVueLoader(() => {}, { 
@@ -22,33 +22,21 @@ Encore
     })
     .enableSassLoader()
     .enableLessLoader()
-    .enableBuildNotifications()
     .addPlugin(new webpack.DefinePlugin({
         __VUE_OPTIONS_API__: true,
         __VUE_PROD_DEVTOOLS__: false,
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
     }))
-    .addAliases({
-        '@': [
-            path.resolve(__dirname, './sprinkle/assets'),
-            path.resolve(__dirname, './app/assets'),
-        ]
-    })
-    // .configureDevServerOptions(options => {
-    //     options.port = 8080;
-    //     options.liveReload = true;
-    //     options.static = {
-    //         watch: false
-    //     };
-    //     options.watchFiles = {
-    //         paths: ['app/src/**/*.php', 'templates/**/*'],
-    //     };
-    //     options.proxy = {
-    //         '!/public/assets/**': {
-    //             target: 'http://localhost:8888',
-    //             changeOrigin: true,
-    //         }
-    //     };
-    // })
 ;
+var config = Encore.getWebpackConfig();
 
-module.exports = Encore.getWebpackConfig();
+// Fix for extensionless imports
+// @see https://webpack.js.org/configuration/module/#resolvefullyspecified
+config.module.rules.push({
+    test: /\.m?js/,
+    resolve: {
+        fullySpecified: false
+    }
+});
+
+export default config;

@@ -1,20 +1,18 @@
 <script setup>
-import UIkit from 'uikit'
-import Icons from 'uikit/dist/js/uikit-icons'
-import Navbar from '@/components/Navbar.vue'
-
-UIkit.use(Icons);
+import { MainContent } from '@userfrosting/theme-pink-cupcake/Content'
+import { NavBar } from '@userfrosting/theme-pink-cupcake/NavBar'
+import { NavBarItem } from '@userfrosting/theme-pink-cupcake/NavBar'
 </script>
 
 <template>
-    <header>
-        <Navbar title="Userfrosting" />
-    </header>
-    <div class="uk-section uk-section-default">
+    <NavBar title="Userfrosting">
+        <NavBarItem to="/" label="Home" />
+        <NavBarItem to="/about" label="About" />
+        <NavBarItem to="/resources" label="Api Test" />
+        <NavBarItem to="/auth" label="Login Test" />
+    </NavBar>
+    <MainContent>
         <RouterView />
-    </div>
+    </MainContent>
 </template>
 
-<style lang="less">
-@import "less/uf-theme.less";
-</style>

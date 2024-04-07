@@ -7,18 +7,16 @@ const auth = useAuthStore()
 </script>
 
 <template>
-    <div class="uk-container">
-        <h1 class="uk-heading-divider">Authentication Test</h1>
-        <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
-            <div v-if="auth.auth">
-                <Logout />
-            </div>
-            <div v-else="auth.auth">
-                <Login />
-            </div>
-            <div>
-                <AuthCheck />
-            </div>
+    <h1 class="uk-heading-divider">Authentication Test</h1>
+    <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
+        <div v-if="auth.auth">
+            <Logout />
+        </div>
+        <div v-else="auth.auth">
+            <Login />
+        </div>
+        <div>
+            <AuthCheck />
         </div>
     </div>
 </template>

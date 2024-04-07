@@ -1,6 +1,6 @@
 /** Create App */
 import { createApp } from 'vue'
-import App from '@/App.vue'
+import App from './App.vue'
 const app = createApp(App)
 
 /** Setup Pinia */
@@ -10,17 +10,13 @@ const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 app.use(pinia)
 
-/** Setup FontAwesome */
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
-library.add(fas, fab, far);
-app.component('font-awesome-icon', FontAwesomeIcon)
+/** Setup Theme */
+import '@userfrosting/theme-pink-cupcake/style.less'
+import PinkCupcake from '@userfrosting/theme-pink-cupcake'
+app.use(PinkCupcake)
 
 /** Setup Router */
-import router from '@/router'
+import router from './router'
 app.use(router)
 
 // Done

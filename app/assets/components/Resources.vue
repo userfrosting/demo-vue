@@ -1,32 +1,29 @@
 <script setup>
-const resources = [
-    {
-        url: 'https://getbootstrap.com/docs/5.3/getting-started/introduction/',
-        title: 'Bootstrap quick start guide'
-    },
-    {
-        url: 'https://getbootstrap.com/docs/5.3/getting-started/webpack/',
-        title: 'Bootstrap Webpack guide'
-    },
-    {
-        url: 'https://getbootstrap.com/docs/5.3/getting-started/parcel/',
-        title: 'Bootstrap Parcel guide'
-    },
-    {
-        url: 'https://getbootstrap.com/docs/5.3/getting-started/vite/',
-        title: 'Bootstrap Vite guide'
-    },
-    {
-        url: 'https://getbootstrap.com/docs/5.3/getting-started/contribute/',
-        title: 'Contributing to Bootstrap'
-    },
-]
+import axios from 'axios'
+import { ref } from 'vue'
+
+// Variables
+const resources = ref([])
+const loading = ref(false)
+
+// Methods 
+function getList() {
+    loading.value = true
+    axios.get('/api').then((response) => {
+        resources.value = response.data
+        loading.value = false
+    })
+}
+
+// Initial load
+getList()
 </script>
 
 <template>
     <ul class="uk-list">
         <li v-for="item in resources">
-            <a class="uk-button uk-button-default" :href="item.url">{{ item.title }}</a>
+            <a class="uk-button uk-button-default" :href="item.url">#{{ item.number }} - {{ item.title }}</a>
         </li>
     </ul>
+    <button class="uk-button uk-button-primary" @click="getList()" :disabled='loading'>Reload Resources</button>
 </template>
