@@ -44,6 +44,7 @@ vagrant/Homestead/
 
 # Ignore dev utility cache
 .phpunit.result.cache
+.phpunit.cache
 .php_cs.cache
 
 # Ignore api doc
