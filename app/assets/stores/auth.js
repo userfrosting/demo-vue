@@ -33,10 +33,10 @@ export const useAuthStore = defineStore("auth", {
         },
         logout() {
             this.loading = true;
+            this.user = null;
             axios
                 .get("/auth/logout")
                 .then(() => {
-                    this.user = null;
                     this.check(); // Check to make sure it worked
                 })
                 .finally(() => {
