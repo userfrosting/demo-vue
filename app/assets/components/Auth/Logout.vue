@@ -5,6 +5,8 @@ const auth = useAuthStore()
 
 <template>
     <div class="uk-margin uk-text-center">
-        <button class="uk-button uk-button-default" @click="auth.logout()" :disabled='auth.loading'>Logout</button>
+        <button class="uk-button uk-button-default" @click="auth.logout()" :disabled="auth.loading">
+            Logout
+        </button>
     </div>
 </template>

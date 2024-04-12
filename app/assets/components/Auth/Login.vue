@@ -18,17 +18,30 @@ let form = {
         <div>
             <label class="uk-form-label" for="form-horizontal-username">Username</label>
             <div class="uk-form-controls">
-                <input class="uk-input" id="form-horizontal-username" type="text" v-model="form.user_name">
+                <input
+                    class="uk-input"
+                    id="form-horizontal-username"
+                    type="text"
+                    v-model="form.user_name" />
             </div>
         </div>
         <div>
             <label class="uk-form-label" for="form-horizontal-password">Password</label>
             <div class="uk-form-controls">
-                <input class="uk-input" id="form-horizontal-password" type="password" v-model="form.password">
+                <input
+                    class="uk-input"
+                    id="form-horizontal-password"
+                    type="password"
+                    v-model="form.password" />
             </div>
         </div>
         <div class="uk-text-center">
-            <button class="uk-button uk-button-primary" @click="auth.login(form)" :disabled='auth.loading'>Login</button>
+            <button
+                class="uk-button uk-button-primary"
+                @click="auth.login(form)"
+                :disabled="auth.loading">
+                Login
+            </button>
         </div>
     </form>
 </template>

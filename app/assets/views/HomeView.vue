@@ -1,10 +1,14 @@
 <template>
     <article class="uk-article">
         <h1 class="uk-article-title"><a class="uk-link-reset" href="#">Hello!</a></h1>
-        <p class="uk-article-meta">Written by <a href="#">John Appleseed</a> on 29 September 2018.</p>
-        <p class="uk-text-lead">This is a demo of UserFrosting using a custom UiKit based template built using Vue 3.0</p>
+        <p class="uk-article-meta">
+            Written by <a href="#">John Appleseed</a> on 29 September 2018.
+        </p>
+        <p class="uk-text-lead">
+            This is a demo of UserFrosting using a custom UiKit based template built using Vue 3.0
+        </p>
         <p>All the content below is just for example and I've not added any functionality.</p>
-        
+
         <div class="uk-grid-small uk-child-width-auto" uk-grid>
             <div>
                 <a class="uk-button uk-button-text" href="#">Read more</a>
@@ -15,7 +19,7 @@
         </div>
     </article>
 
-    <div style="padding-top: 25px; padding-bottom: 25px;"></div>
+    <div style="padding-top: 25px; padding-bottom: 25px"></div>
 
     <table class="uk-table uk-table-divider">
         <thead>
@@ -44,7 +48,7 @@
         </tbody>
     </table>
 
-    <hr class="uk-divider-icon" style="padding-top: 25px; padding-bottom: 25px;">
+    <hr class="uk-divider-icon" style="padding-top: 25px; padding-bottom: 25px" />
 
     <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
         <div>
@@ -73,5 +77,5 @@
         </div>
     </div>
 
-    <div style="padding-top: 50px;"></div>
+    <div style="padding-top: 50px"></div>
 </template>

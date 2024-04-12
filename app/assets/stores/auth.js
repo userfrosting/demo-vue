@@ -1,58 +1,58 @@
 // store.js
-import { defineStore } from "pinia";
-import axios from "axios";
+import { defineStore } from 'pinia'
+import axios from 'axios'
 
-export const useAuthStore = defineStore("auth", {
+export const useAuthStore = defineStore('auth', {
     persist: true,
     state: () => {
         return {
             loading: false,
             user: null,
-            error: null,
-        };
+            error: null
+        }
     },
     getters: {
-        auth: (state) => state.user !== null,
+        auth: (state) => state.user !== null
     },
     actions: {
         login(form) {
-            this.loading = true;
-            this.error = null;
+            this.loading = true
+            this.error = null
             axios
-                .post("/auth/login", form)
+                .post('/auth/login', form)
                 .then((response) => {
-                    this.user = response.data;
-                    this.check(); // Check to make sure it worked
+                    this.user = response.data
+                    this.check() // Check to make sure it worked
                 })
                 .catch((error) => {
-                    this.error = error.response.data;
+                    this.error = error.response.data
                 })
                 .finally(() => {
-                    this.loading = false;
-                });
+                    this.loading = false
+                })
         },
         logout() {
-            this.loading = true;
-            this.user = null;
+            this.loading = true
+            this.user = null
             axios
-                .get("/auth/logout")
+                .get('/auth/logout')
                 .then(() => {
-                    this.check(); // Check to make sure it worked
+                    this.check() // Check to make sure it worked
                 })
                 .finally(() => {
-                    this.loading = false;
-                });
+                    this.loading = false
+                })
         },
         check() {
-            this.loading = true;
+            this.loading = true
             axios
-                .get("/auth/check")
+                .get('/auth/check')
                 .then((response) => {
-                    this.user = response.data.user;
+                    this.user = response.data.user
                 })
                 .finally(() => {
-                    this.loading = false;
-                });
-        },
-    },
-});
+                    this.loading = false
+                })
+        }
+    }
+})

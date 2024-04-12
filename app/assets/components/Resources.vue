@@ -6,7 +6,7 @@ import { ref } from 'vue'
 const resources = ref([])
 const loading = ref(false)
 
-// Methods 
+// Methods
 function getList() {
     loading.value = true
     axios.get('/api').then((response) => {
@@ -22,8 +22,12 @@ getList()
 <template>
     <ul class="uk-list">
         <li v-for="item in resources">
-            <a class="uk-button uk-button-default" :href="item.url">#{{ item.number }} - {{ item.title }}</a>
+            <a class="uk-button uk-button-default" :href="item.url">
+                #{{ item.number }} - {{ item.title }}
+            </a>
         </li>
     </ul>
-    <button class="uk-button uk-button-primary" @click="getList()" :disabled='loading'>Reload Resources</button>
+    <button class="uk-button uk-button-primary" @click="getList()" :disabled="loading">
+        Reload Resources
+    </button>
 </template>
