@@ -1,5 +1,5 @@
 <script setup>
-import Resources from '../components/Resources.vue'
+import Resources from '../components/ResourcesList.vue'
 </script>
 
 <template>

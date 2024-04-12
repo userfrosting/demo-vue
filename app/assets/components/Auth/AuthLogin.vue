@@ -1,6 +1,6 @@
 <script setup>
 import { useAuthStore } from '../../stores/auth.js'
-import Alert from '../Alert.vue'
+import Alert from '../AlertContainer.vue'
 
 const auth = useAuthStore()
 

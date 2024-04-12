@@ -1,7 +1,7 @@
 <script setup>
-import AuthCheck from '../components/Auth/Check.vue'
-import Login from '../components/Auth/Login.vue'
-import Logout from '../components/Auth/Logout.vue'
+import AuthCheck from '../components/Auth/AuthCheck.vue'
+import Login from '../components/Auth/AuthLogin.vue'
+import Logout from '../components/Auth/AuthLogout.vue'
 import { useAuthStore } from '../stores/auth.js'
 const auth = useAuthStore()
 </script>
@@ -12,7 +12,7 @@ const auth = useAuthStore()
         <div v-if="auth.auth">
             <Logout />
         </div>
-        <div v-else="auth.auth">
+        <div v-else>
             <Login />
         </div>
         <div>

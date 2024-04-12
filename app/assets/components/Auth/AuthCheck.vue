@@ -14,7 +14,7 @@ auth.check()
                 :icon="['fas', 'circle-check']" />
             <font-awesome-icon
                 class="uk-text-danger"
-                v-else="auth.auth"
+                v-else
                 :icon="['fas', 'circle-xmark']" />
         </p>
         <p v-if="auth.auth">

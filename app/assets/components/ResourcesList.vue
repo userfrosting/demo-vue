@@ -21,7 +21,7 @@ getList()
 
 <template>
     <ul class="uk-list">
-        <li v-for="item in resources">
+        <li v-for="item in resources" :key="item.id">
             <a class="uk-button uk-button-default" :href="item.url">
                 #{{ item.number }} - {{ item.title }}
             </a>

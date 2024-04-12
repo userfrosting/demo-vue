@@ -1,6 +1,6 @@
 <script setup>
-const props = defineProps({
-    alert: Object
+defineProps({
+    alert: [Object, null]
 })
 </script>
 
