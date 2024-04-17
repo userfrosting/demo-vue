@@ -12,10 +12,7 @@ auth.check()
                 class="uk-text-success"
                 v-if="auth.auth"
                 :icon="['fas', 'circle-check']" />
-            <font-awesome-icon
-                class="uk-text-danger"
-                v-else
-                :icon="['fas', 'circle-xmark']" />
+            <font-awesome-icon class="uk-text-danger" v-else :icon="['fas', 'circle-xmark']" />
         </p>
         <p v-if="auth.auth">
             <img :src="auth.user.avatar" class="uk-margin-right" width="50" height="50" />

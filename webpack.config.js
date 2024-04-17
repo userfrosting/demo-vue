@@ -20,7 +20,6 @@ Encore
     .enableVueLoader(() => {}, { 
         runtimeCompilerBuild: false
     })
-    .enableSassLoader()
     .enableLessLoader()
     .addPlugin(new webpack.DefinePlugin({
         __VUE_OPTIONS_API__: true,
