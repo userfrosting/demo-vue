@@ -1,12 +1,13 @@
 # UserFrosting 5.0 - Vue.js Demo
 
-![PHP Version](https://img.shields.io/badge/php-%5E8.0-brightgreen)
+![PHP Version](https://img.shields.io/badge/php-%5E8.1-brightgreen)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
-[![Join the chat at https://chat.userfrosting.com/channel/support](https://chat.userfrosting.com/api/v1/shield.svg?name=UserFrosting)](https://chat.userfrosting.com/channel/support)
 [![Build](https://github.com/userfrosting/demo-vue/workflows/Build/badge.svg?branch=main)](https://github.com/userfrosting/demo-vue/actions?query=workflow%3ABuild)
 [![Codecov](https://codecov.io/gh/userfrosting/demo-vue/branch/main/graph/badge.svg)](https://codecov.io/gh/userfrosting/demo-vue)
 [![Style](https://github.styleci.io/repos/689461212/shield?branch=main&style=flat)](https://github.styleci.io/repos/689461212)
 [![PHPStan](https://img.shields.io/github/actions/workflow/status/userfrosting/demo-vue/PHPStan.yml?branch=main&label=PHPStan)](https://github.com/userfrosting/demo-vue/actions/workflows/PHPStan.yml)
+[![Join the chat](https://img.shields.io/badge/Chat-UserFrosting-brightgreen?logo=Rocket.Chat)](https://chat.userfrosting.com)
 [![Donate](https://img.shields.io/badge/Donate-Buy%20Me%20a%20Coffee-blue.svg)](https://ko-fi.com/lcharette)
 <!-- [![Latest Version](https://img.shields.io/github/v/release/userfrosting/userfrosting?include_prereleases&sort=semver)](https://github.com/userfrosting/UserFrosting/releases) -->
 <!-- [![Backers on Open Collective](https://opencollective.com/userfrosting/backers/badge.svg)](#backers) -->
@@ -42,7 +43,7 @@ php bakery bake
 
 4. Serve locally
 ```
-php -S localhost:8888 -t public 
+php bakery serve
 ```
 
 Assets can be build using Bakery or Npm directly:
