@@ -4,7 +4,7 @@
     "type": "module",
     "description": "UserFrosting Vue Demo",
     "dependencies": {
-        "@userfrosting/theme-pink-cupcake": "github:userfrosting/theme-pink-cupcake",
+        "@userfrosting/theme-pink-cupcake": "^0.2.0",
         "axios": "^1.5.0",
         "pinia": "^2.1.6",
         "pinia-plugin-persistedstate": "^3.2.0",
@@ -14,11 +14,13 @@
     "devDependencies": {
         "@rushstack/eslint-patch": "^1.8.0",
         "@symfony/webpack-encore": "^4.4.0",
+        "@vitejs/plugin-vue": "^5.0.4",
         "@vue/eslint-config-prettier": "^9.0.0",
         "eslint": "^8.57.0",
         "eslint-plugin-vue": "^9.23.0",
         "less-loader": "^11.1.3",
         "prettier": "^3.2.5",
+        "vite": "^5.2.8",
         "vue-loader": "^17.2.2",
         "vue-template-compiler": "^2.7.14",
         "webpack-notifier": "^1.15.0"
@@ -29,6 +31,9 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "lint": "eslint app/assets/ --ext .vue,.js --fix --ignore-path .gitignore",
-        "format": "prettier --write app/assets/"
+        "format": "prettier --write app/assets/",
+        "vite:dev": "vite",
+        "vite:build": "vite build",
+        "vite:preview": "vite preview"
     }
 }
