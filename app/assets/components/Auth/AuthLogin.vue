@@ -1,19 +1,22 @@
 <script setup>
+import { useLoginApi } from '../../composables/loginApi.js'
 import { useAuthStore } from '../../stores/auth.js'
 
-const auth = useAuthStore()
-
-// Variables
+// Form variables
 let form = {
     user_name: '',
     password: ''
 }
+
+// Login API variables
+const auth = useAuthStore()
+const { loading, error, login } = useLoginApi(auth)
 </script>
 
 <template>
     <UFCardBox title="Login">
         <form class="uk-form-horizontal" uk-margin>
-            <UFAlertContainer v-if="auth.error" :alert="auth.error" />
+            <UFAlertContainer v-if="error" :alert="error" />
             <div>
                 <label class="uk-form-label" for="form-horizontal-username">Username</label>
                 <div class="uk-form-controls">
@@ -35,10 +38,11 @@ let form = {
                 </div>
             </div>
             <div class="uk-text-center">
+                <font-awesome-icon icon="fa-solid fa-spinner" spin v-if="loading" />
                 <button
                     class="uk-button uk-button-primary"
-                    @click="auth.login(form)"
-                    :disabled="auth.loading">
+                    @click="login(form)"
+                    :disabled="loading">
                     Login
                 </button>
             </div>

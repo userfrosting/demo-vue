@@ -1,7 +1,12 @@
 <script setup>
 import { useAuthStore } from '../../stores/auth.js'
+import { useCheckApi } from '../../composables/authCheckApi.js'
+
 const auth = useAuthStore()
-auth.check()
+
+// Login API variables
+const { loading, check } = useCheckApi(auth)
+check()
 </script>
 
 <template>
@@ -16,13 +21,12 @@ auth.check()
             </p>
             <p v-if="auth.auth">
                 <img :src="auth.user.avatar" class="uk-margin-right" width="50" height="50" />
-                <span class="uk-text-middle"><strong>Username:</strong> {{ auth.user.user_name }}</span>
+                <span class="uk-text-middle">
+                    <strong>Username:</strong> {{ auth.user.user_name }}
+                </span>
             </p>
             <p>
-                <button
-                    class="uk-button uk-button-primary"
-                    @click="auth.check()"
-                    :disabled="auth.loading">
+                <button class="uk-button uk-button-primary" @click="check()" :disabled="loading">
                     Check Authentication
                 </button>
             </p>
