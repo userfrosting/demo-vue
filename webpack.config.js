@@ -26,6 +26,14 @@ Encore
         __VUE_PROD_DEVTOOLS__: false,
         __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
     }))
+
+    // Disable client overlay
+    // @see https://github.com/vuejs/vue-cli/issues/7431#issuecomment-1804682832
+    .configureDevServerOptions(options => {
+        options.client = {
+            overlay: false
+        }
+    })
 ;
 var config = Encore.getWebpackConfig();
 
