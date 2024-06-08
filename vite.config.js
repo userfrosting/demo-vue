@@ -21,7 +21,7 @@ export default defineConfig({
         manifest: true,
         rollupOptions: {
             input: {
-                main: 'app/assets/main.js'
+                main: 'app/assets/main.ts'
             }
         }
     },

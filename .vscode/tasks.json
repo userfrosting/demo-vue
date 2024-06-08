@@ -52,7 +52,7 @@
             "problemMatcher": []
         },
         {
-            "label": "npm run dev",
+            "label": "webpack:dev",
             "type": "shell",
             "options": {},
             "command": "npm run dev",
@@ -60,7 +60,7 @@
             "group": "build"
         },
         {
-            "label": "npm run dev-server (HMR)",
+            "label": "webpack:dev-server (HMR)",
             "type": "shell",
             "options": {},
             "command": "npm run dev-server",
@@ -68,10 +68,17 @@
             "group": "build"
         },
         {
-            "label": "npm run watch",
+            "label": "webpack:watch",
             "type": "shell",
             "options": {},
             "command": "npm run watch",
+            "problemMatcher": []
+        },
+        {
+            "label": "webpack:build",
+            "type": "shell",
+            "options": {},
+            "command": "npm run build",
             "problemMatcher": []
         },
         {
@@ -86,6 +93,27 @@
             "type": "shell",
             "options": {},
             "command": "npm run format",
+            "problemMatcher": []
+        },
+        {
+            "label": "vite:dev",
+            "type": "shell",
+            "options": {},
+            "command": "npm run vite:dev",
+            "problemMatcher": []
+        },
+        {
+            "label": "vite:build",
+            "type": "shell",
+            "options": {},
+            "command": "npm run vite:build",
+            "problemMatcher": []
+        },
+        {
+            "label": "vite:preview",
+            "type": "shell",
+            "options": {},
+            "command": "npm run vite:preview",
             "problemMatcher": []
         }
     ]

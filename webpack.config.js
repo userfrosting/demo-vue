@@ -10,11 +10,12 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('public/assets')
     .setPublicPath('/assets/')
-    .addEntry('app', './app/assets/main.js')
+    .addEntry('app', './app/assets/main.ts')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
+    .enableTypeScriptLoader()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
     .enableVueLoader(() => {}, { 
