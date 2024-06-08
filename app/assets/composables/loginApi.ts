@@ -1,20 +1,21 @@
 import { ref } from 'vue'
 import axios from 'axios'
-import { AlertStyle } from '@userfrosting/theme-pink-cupcake/types'
+import { type AlertInterface, AlertStyle } from '@userfrosting/theme-pink-cupcake/types'
 
 /**
  * API to communicate with the authentication API.
  */
-export function useLoginApi(auth) {
+// TODO : Change auth type
+export function useLoginApi(auth: any) {
     const loading = ref(false)
-    const error = ref(undefined)
-    // const error = ref<AlertInterface>()
+    const error = ref<AlertInterface | undefined>()
 
     // TODO : Error if user is not null
 
-    const login = (form) => {
+    // TODO : Change form type
+    const login = (form: any) => {
         loading.value = true
-        error.value = null
+        error.value = undefined
         axios
             .post('/auth/login', form)
             .then((response) => {

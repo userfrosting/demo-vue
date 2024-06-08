@@ -1,5 +1,5 @@
 <script setup>
-import { useLoginApi } from '../../composables/loginApi.js'
+import { useLoginApi } from '../../composables/loginApi'
 import { useAuthStore } from '../../stores/auth.js'
 
 // Form variables

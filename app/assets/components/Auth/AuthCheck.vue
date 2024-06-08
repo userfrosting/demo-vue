@@ -1,6 +1,6 @@
 <script setup>
 import { useAuthStore } from '../../stores/auth.js'
-import { useCheckApi } from '../../composables/authCheckApi.js'
+import { useCheckApi } from '../../composables/authCheckApi'
 
 const auth = useAuthStore()
 
