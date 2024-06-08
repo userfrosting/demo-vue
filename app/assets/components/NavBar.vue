@@ -1,5 +1,5 @@
 <script setup>
-import { useAuthStore } from '../stores/auth.js'
+import { useAuthStore } from '../stores/auth'
 import { useLogoutApi } from '../composables/logoutApi'
 
 const auth = useAuthStore()
@@ -13,7 +13,7 @@ const { logout } = useLogoutApi(auth)
         <UFNavBarItem to="/resources" label="Api Test" />
         <UFNavBarItem to="/auth" label="Login Test" />
         <UFNavBarUserCard
-            v-if="auth.auth"
+            v-if="auth.isAuth"
             :username="auth.user.full_name"
             :avatar="auth.user.avatar"
             :meta="auth.user.user_name">

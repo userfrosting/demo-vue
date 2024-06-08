@@ -1,6 +1,6 @@
 <script setup>
 import { useLogoutApi } from '../../composables/logoutApi'
-import { useAuthStore } from '../../stores/auth.js'
+import { useAuthStore } from '../../stores/auth'
 
 // Logout API variables
 const auth = useAuthStore()

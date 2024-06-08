@@ -1,20 +1,21 @@
 import { defineStore } from 'pinia'
+import type { UserInterface } from '../interfaces/userInterface'
 
 export const useAuthStore = defineStore('auth', {
     persist: true,
     state: () => {
         return {
-            user: null
+            user: null as UserInterface | null
         }
     },
     getters: {
-        auth: (state) => state.user !== null
+        isAuth: (state): boolean => state.user !== null
     },
     actions: {
-        setUser(user) {
+        setUser(user: UserInterface): void {
             this.user = user
         },
-        unsetUser() {
+        unsetUser(): void {
             this.user = null
         }
     }

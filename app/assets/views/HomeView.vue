@@ -6,9 +6,9 @@ interface User {
 }
 
 const user: User = {
-    firstName: "Angela",
-    lastName: "Davis",
-    role: "Professor",
+    firstName: 'Angela',
+    lastName: 'Davis',
+    role: 'Professor'
 }
 
 const helloMsg: string = 'Hello ' + user.firstName + ' ' + user.lastName + '!'
@@ -16,9 +16,12 @@ const helloMsg: string = 'Hello ' + user.firstName + ' ' + user.lastName + '!'
 
 <template>
     <article class="uk-article">
-        <h1 class="uk-article-title"><a class="uk-link-reset" href="#">{{ helloMsg }}</a></h1>
+        <h1 class="uk-article-title">
+            <a class="uk-link-reset" href="#">{{ helloMsg }}</a>
+        </h1>
         <p class="uk-article-meta">
-            Written by <a href="#">{{user.firstName}} {{ user.lastName }}</a>, {{ user.role }} on 29 September 2018.
+            Written by <a href="#">{{ user.firstName }} {{ user.lastName }}</a
+            >, {{ user.role }} on 29 September 2018.
         </p>
         <p class="uk-text-lead">
             This is a demo of UserFrosting using a custom UiKit based template built using Vue 3.0
