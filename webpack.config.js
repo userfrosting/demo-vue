@@ -1,4 +1,5 @@
 import Encore from '@symfony/webpack-encore'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import webpack from 'webpack'
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
@@ -27,6 +28,7 @@ Encore
         __VUE_PROD_DEVTOOLS__: false,
         __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
     }))
+    .addPlugin(new ForkTsCheckerWebpackPlugin())
 
     // Disable client overlay
     // @see https://github.com/vuejs/vue-cli/issues/7431#issuecomment-1804682832
