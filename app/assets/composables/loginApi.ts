@@ -1,8 +1,8 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { type AlertInterface, AlertStyle } from '@userfrosting/theme-pink-cupcake/types'
-// import { useAuthStore } from '../stores/auth'
-// const authStore = useAuthStore()
+import { useAuthStore } from '../stores/auth'
+const authStore = useAuthStore()
 
 /**
  * Composable used to communicate with the `/auth/login` api. Calling "login"
@@ -10,9 +10,7 @@ import { type AlertInterface, AlertStyle } from '@userfrosting/theme-pink-cupcak
  * successful, the user will be set on the frontend object. Otherwise, an error
  * will be defined.
  */
-// TODO : Fix error "getActivePinia()" was called but there was no active Pinia
-// export function useLoginApi(auth: typeof authStore) {
-export function useLoginApi(auth: any) {
+export function useLoginApi(auth: typeof authStore) {
     const loading = ref(false)
     const error = ref<AlertInterface | undefined>()
 
