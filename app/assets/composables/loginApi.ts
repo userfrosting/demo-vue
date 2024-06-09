@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { type AlertInterface, AlertStyle } from '@userfrosting/theme-pink-cupcake/types'
 import { useAuthStore } from '../stores/auth'
+import type { LoginForm } from '../interfaces/loginForm';
 const authStore = useAuthStore()
 
 /**
@@ -15,8 +16,7 @@ export function useLoginApi(auth: typeof authStore) {
     const error = ref<AlertInterface | undefined>()
 
     // TODO : Error if user is not null
-    // TODO : Change form type
-    const login = (form: any) => {
+    const login = (form: LoginForm) => {
         loading.value = true
         error.value = undefined
         axios

@@ -21,6 +21,7 @@ export function useCheckApi(auth: typeof authStore) {
                 auth.setUser(response.data.user)
             })
             .catch((err) => {
+                auth.unsetUser()
                 error.value = {
                     ...err.response.data,
                     ...{ style: AlertStyle.Danger, closeBtn: true }
