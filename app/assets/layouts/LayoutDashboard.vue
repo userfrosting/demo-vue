@@ -7,7 +7,6 @@ import FooterContent from '../components/FooterContent.vue'
     <NavBar />
     <UFSideBar>
         <UFSideBarLabel label="NAVIGATION" />
-        
     </UFSideBar>
     <UFMainContent>
         <slot></slot>

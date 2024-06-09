@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useLoginApi } from '../../composables/loginApi'
 import { useAuthStore } from '../../stores/auth'
-import type { LoginForm } from '../../interfaces/loginForm';
+import type { LoginForm } from '../../interfaces/loginForm'
 
 // Form variables
 let form: LoginForm = {

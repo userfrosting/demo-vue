@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { type AlertInterface, AlertStyle } from '@userfrosting/theme-pink-cupcake/types'
 import { useAuthStore } from '../stores/auth'
-import type { LoginForm } from '../interfaces/loginForm';
+import type { LoginForm } from '../interfaces/loginForm'
 const authStore = useAuthStore()
 
 /**

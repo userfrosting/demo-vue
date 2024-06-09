@@ -26,7 +26,8 @@ const helloMsg: string = 'Hello ' + user.firstName + ' ' + user.lastName + '!'
                 >, {{ user.role }} on 29 September 2018.
             </p>
             <p class="uk-text-lead">
-                This is a demo of UserFrosting using a custom UiKit based template built using Vue 3.0
+                This is a demo of UserFrosting using a custom UiKit based template built using Vue
+                3.0
             </p>
             <p>All the content below is just for example and I've not added any functionality.</p>
 
