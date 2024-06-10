@@ -6,7 +6,7 @@ import FooterContent from '../components/FooterContent.vue'
 <template>
     <NavBar />
     <UFMainContent>
-        <slot></slot>
+        <RouterView />
     </UFMainContent>
     <FooterContent />
 </template>

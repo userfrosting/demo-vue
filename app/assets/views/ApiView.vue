@@ -1,11 +1,8 @@
 <script setup>
-import LayoutPage from '../layouts/LayoutPage'
-import Resources from '../components/ResourcesList'
+import Resources from '../components/ResourcesList.vue'
 </script>
 
 <template>
-    <LayoutPage>
-        <h1 class="uk-heading-divider">Resources</h1>
-        <Resources />
-    </LayoutPage>
+    <h1 class="uk-heading-divider">Resources</h1>
+    <Resources />
 </template>

@@ -9,7 +9,7 @@ import FooterContent from '../components/FooterContent.vue'
         <UFSideBarLabel label="NAVIGATION" />
     </UFSideBar>
     <UFMainContent>
-        <slot></slot>
+        <RouterView />
     </UFMainContent>
     <FooterContent />
 </template>
