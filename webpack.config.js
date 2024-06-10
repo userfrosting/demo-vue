@@ -43,15 +43,5 @@ Encore
         }
     })
 ;
-var config = Encore.getWebpackConfig();
 
-// Fix for extensionless imports
-// @see https://webpack.js.org/configuration/module/#resolvefullyspecified
-config.module.rules.push({
-    test: /\.m?js/,
-    resolve: {
-        fullySpecified: false
-    }
-});
-
-export default config;
+export default Encore.getWebpackConfig();
