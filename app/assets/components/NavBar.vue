@@ -11,6 +11,7 @@ const { logout } = useLogoutApi(auth)
     <UFNavBar title="Userfrosting">
         <UFNavBarItem :to="{ name: 'home' }" label="Home" />
         <UFNavBarItem :to="{ name: 'about' }" label="About" />
+        <UFNavBarItem to="/alert" label="Alert" />
         <UFNavBarItem to="/resources" label="Api Test" />
         <UFNavBarItem to="/auth" label="Login Test" />
         <UFNavBarUserCard

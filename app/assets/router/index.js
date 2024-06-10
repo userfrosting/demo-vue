@@ -19,6 +19,11 @@ const router = createRouter({
                     component: () => import('../views/AboutView.vue')
                 },
                 {
+                    path: '/alert',
+                    name: 'alert',
+                    component: () => import('@userfrosting/theme-pink-cupcake-example/src/views/DashboardAlerts.vue')
+                },
+                {
                     path: '/resources',
                     name: 'api',
                     component: () => import('../views/ApiView.vue')

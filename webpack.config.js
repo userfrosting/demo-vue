@@ -17,6 +17,11 @@ Encore
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableTypeScriptLoader()
+    // Allow typescript to parse vue components imported from source
+    // eg.: @userfrosting/theme-pink-cupcake-example/src/views/DashboardAlerts.vue
+    .configureLoaderRule('typescript', loaderRule => {
+        loaderRule.exclude = undefined
+    })
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
     .enableVueLoader(() => {}, { 
