@@ -5,14 +5,9 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
     plugins: [vue()],
     server: {
-        fs: {
-            // Allow serving files from one level up to the project root.
-            // Required for local testing, not required in normal project.
-            allow: ['..']
-        },
-        cors: true,
         strictPort: true,
-        port: 3000
+        port: 3000,
+        origin: 'http://localhost:3000'
     },
     root: 'app/assets/',
     build: {
