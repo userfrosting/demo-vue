@@ -20,13 +20,13 @@ export default defineConfig({
             }
         }
     },
-
-    // Add UIKit alias : https://stackoverflow.com/a/75264118/445757
-    resolve: {
-        alias: {
-            '../../images/backgrounds': 'uikit/src/images/backgrounds',
-            '../../images/components': 'uikit/src/images/components',
-            '../../images/icons': 'uikit/src/images/icons'
-        }
-    }
+    // Fix uikit path issue
+    // @see : https://github.com/uikit/uikit/issues/5024
+    css: {
+        preprocessorOptions: {
+            less: {
+                relativeUrls: "all",
+            },
+        },
+    },
 })
