@@ -16,7 +16,8 @@
         "ext-gd": "*",
         "userfrosting/framework": "~5.1.0",
         "userfrosting/sprinkle-core": "~5.1.0",
-        "userfrosting/sprinkle-account": "~5.1.0"
+        "userfrosting/sprinkle-account": "~5.1.0",
+        "userfrosting/vite-php-twig": "^1.0.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",

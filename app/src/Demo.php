@@ -11,9 +11,11 @@
 namespace UserFrosting\Demo;
 
 use UserFrosting\Sprinkle\Core\Core;
+use UserFrosting\Sprinkle\Core\Sprinkle\Recipe\TwigExtensionRecipe;
 use UserFrosting\Sprinkle\SprinkleRecipe;
+use UserFrosting\ViteTwig\ViteTwigExtension;
 
-class Demo implements SprinkleRecipe
+class Demo implements SprinkleRecipe, TwigExtensionRecipe
 {
     /**
      * {@inheritdoc}
@@ -61,6 +63,18 @@ class Demo implements SprinkleRecipe
      */
     public function getServices(): array
     {
-        return [];
+        return [
+            Services::class,
+        ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTwigExtensions(): array
+    {
+        return [
+            ViteTwigExtension::class,
+        ];
     }
 }

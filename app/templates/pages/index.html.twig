@@ -4,19 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    {{ encore_entry_link_tags('app') }}
     <!-- <link rel="icon" href="favicon.ico"> -->
     <title>{{ site.title }}</title>
-    {# <link rel="stylesheet" href="./assets/main-CNEYaoRK.css"> #}
-    {# <script type="module" src="http://[::1]:3000/@vite/client"></script> #}
+    {# {{ encore_entry_link_tags('app') }} #}
+    {{ vite_css('main.ts') }}
+    {{ vite_preload('main.ts') }}
   </head>
   <body>
     <noscript>
       <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    {{ encore_entry_script_tags('app') }}
-    {# <script type="module" src="http://[::1]:3000/main.ts"></script> #}
-    {# <script type="module" src="./assets/main-CNFAaDZc.js"></script> #}
+    {# {{ encore_entry_script_tags('app') }} #}
+    {{ vite_js('main.ts') }}
   </body>
 </html>

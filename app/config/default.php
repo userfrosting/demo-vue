@@ -14,4 +14,10 @@ return [
     'csrf' => [
         'enabled' => false,
     ],
+
+    'vite' => [
+        'dev' => env('VITE_DEV_ENABLED', true),
+        'base' => '',
+        'server' => 'http://[::1]:3000/'
+    ]
 ];
